@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "https://kit.fontawesome.com/227ce1f40e.js" %>
   </head>
 
   <body>
@@ -21,6 +22,27 @@
         <p class="alert"><%= alert %></p>
       </div>
     <% end %>
+    <nav class="navbar is-info">
+      <div class="navbar-brand">
+        <%= link_to root_path, class: "navbar-item" do %>
+          <h1 class="title is-5">Secret Clubhouse</h1>
+        <% end %>
+        <div class="navbar-burger burger" data-target="navbarExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </div>
+      </div>
+      <div id="navbarExample" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="field is-grouped">
+            <p class="control">
+              <%= link_to 'New Post', new_post_path, class: "button is-info is-inverted" %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
