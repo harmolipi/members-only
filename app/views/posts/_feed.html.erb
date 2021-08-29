@@ -7,19 +7,24 @@
     </article>
   <% end %>
 
-  <% @posts.each do |post| %>
-    <div class="box">
-      <article class="media">
-        <div class="media-content">
-          <div class="content">
-            <% if user_signed_in? %>
-              <strong><%= post.user.username %></strong><br />
-            <% end %>
-            <strong class="is-size-3"><%= link_to post.title, post %></strong>
-            <p><%= truncate(post.body, length: 200, separator: ' ') %></p>
+  
+
+  <div class="columns is-multiline">
+    <% @posts.each do |post| %>
+      <div class="column is-6">
+        <article class="media box">
+          <div class="media-content">
+            <div class="content">
+              <% if user_signed_in? %>
+                <strong><%= post.user.username %></strong><br />
+              <% end %>
+              <strong class="is-size-3"><%= link_to post.title, post %></strong>
+              <p><%= truncate(post.body, length: 100, separator: ' ') %></p>
+            </div>
           </div>
-        </div>
-      </article>
-    </div>
-  <% end %>
+        </article>
+      </div>
+    <% end %>
+  </div>
+  
 </div>
