@@ -9,6 +9,33 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag "https://kit.fontawesome.com/227ce1f40e.js" %>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+
+      // Get all "navbar-burger" elements
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      // Check if there are any navbar burgers
+      if ($navbarBurgers.length > 0) {
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach( el => {
+          el.addEventListener('click', () => {
+
+            // Get the target from the "data-target" attribute
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+          });
+        });
+      }
+
+    });
+    </script>
   </head>
 
   <body>
@@ -27,7 +54,7 @@
         <%= link_to root_path, class: "navbar-item" do %>
           <h1 class="title is-5">Secret Clubhouse</h1>
         <% end %>
-        <div class="navbar-burger burger" data-target="navbarExample">
+        <div class="navbar-burger" data-target="navbarExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -35,29 +62,28 @@
       </div>
       <div id="navbarExample" class="navbar-menu">
         <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="field is-grouped">
-              <p class="control">
+          <%# <div class="navbar-item"> %>
+            <%# <div class="field is-grouped"> %>
+              <p class="control navbar-item">
                 <%= link_to 'New Post', new_post_path, class: "button is-info is-inverted" %>
               </p>
               <% if user_signed_in? %>
-                <p class="control">
+                <p class="control navbar-item">
                   <%= link_to current_user.username, edit_user_registration_path, class: "button is-info" %>
                 </p>
-                <p class="control">
+                <p class="control navbar-item">
                   <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "button is-info" %>
                 </p>
               <% else %>
-                <p class="control">
+                <p class="control navbar-item">
                   <%= link_to 'Sign in', new_user_session_path, class: "button is-info" %>
                 </p>
-                <p class="control">
+                <p class="control navbar-item">
                   <%= link_to 'Sign up', new_user_registration_path, class: "button is-info" %>
                 </p>
               <% end %>
-
-            </div>
-          </div>
+            <%# </div> %>
+          <%# </div> %>
         </div>
       </div>
     </nav>
