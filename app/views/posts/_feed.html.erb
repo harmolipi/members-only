@@ -23,12 +23,8 @@
           <div class="content">
             <strong>Niko B</strong>
             <small>@nikob</small><br />
-            <strong class="is-size-3"><%= post.title %></strong>
-            <% if post.body.length > 200 %>
-              <p><%= post.body[0..200] %>... <br /><%= link_to "Read more", post %></p>
-            <% else %>
-              <p><%= post.body %></p>
-            <% end %>
+            <strong class="is-size-3"><%= link_to post.title, post %></strong>
+            <p><%= truncate(post.body, length: 200, separator: ' ') %></p>
           </div>
         </div>
         <nav class="level">
