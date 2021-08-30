@@ -7,17 +7,21 @@
     </article>
   <% end %>
 
-  
-
+  <% if @posts.any? %>
   <div class="columns is-multiline">
     <% @posts.each do |post| %>
       <div class="column is-6">
         <article class="media box">
           <div class="media-content">
             <div class="content">
-              <% if user_signed_in? %>
-                <strong><%= post.user.username %></strong><br />
-              <% end %>
+              <div class="columns">
+                <% if user_signed_in? %>
+                  <div class="column"><strong><%= post.user.username %></strong></div>
+                <% else %>
+                  <div class="column"></div>
+                <% end %>
+                <div class="column is-narrow"><%= post.created_at.strftime("%b %d, %Y") %></div>
+              </div>
               <strong class="is-size-3"><%= link_to post.title, post %></strong>
               <p><%= truncate(post.body, length: 100, separator: ' ') %></p>
             </div>
@@ -26,5 +30,8 @@
       </div>
     <% end %>
   </div>
+  <% else %>
+    <p>No secrets yet.</p>
+  <% end %>
   
 </div>
