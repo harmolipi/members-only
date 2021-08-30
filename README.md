@@ -1,4 +1,4 @@
-# Twittter
+# Members Only
 Created as part of [The Odin Project](https://www.theodinproject.com) curriculum.
 
 View on [Github](https://github.com/harmolipi/members-onlyf).
@@ -9,7 +9,7 @@ This is the [Members Only Project](https://www.theodinproject.com/paths/full-sta
 
 ### Thoughts
 
-This was a perfect project to follow the Twitter clone. For the most part, it was very similar to the Twitter clone site, so it was easy to get started on, and also helped to solidify some of the concepts encountered in the Twitter clone project. The main difference was putting different elements behind the registration wall, but thankfully the Devise gem made that easy.
+This was a perfect project to follow the Twitter clone. For the most part, it was very similar to the Twitter clone site, so it was easy to get started on, and also helped to solidify some of the concepts encountered in the Twitter clone project. The main difference was putting different elements behind the registration wall, but thankfully the [Devise gem](https://rubygems.org/gems/devise) made that easy.
 
 There's not a whole lot more to do to this project, but as I learn more about using the Devise gem, I might return and try to add some more sophisticated authentication - maybe including sending a verification email or verification through accounts on other websites. This would be an easy place to test that sort of thing out.
 
