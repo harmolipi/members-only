@@ -1,7 +1,7 @@
 # Members Only
 Created as part of [The Odin Project](https://www.theodinproject.com) curriculum.
 
-View on [Github](https://github.com/harmolipi/members-onlyf).
+View on [Github](https://github.com/harmolipi/members-only).
 
 ### Functionality
 
