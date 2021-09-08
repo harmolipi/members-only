@@ -1,7 +1,7 @@
 # Members Only
 Created as part of [The Odin Project](https://www.theodinproject.com) curriculum.
 
-View on [Github](https://github.com/harmolipi/members-only).
+View code on [Github](https://github.com/harmolipi/members-only), or live preview on [Heroku](https://rocky-hamlet-60169.herokuapp.com/).
 
 ### Functionality
 
